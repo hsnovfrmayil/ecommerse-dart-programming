@@ -49,80 +49,83 @@ main() {
     stdout.write("Banki secin : ");
     int? chooseBank = int.parse(stdin.readLineSync()!);
     print("*****************************************************");
+    if (chooseBank == 1 || chooseBank == 2 || chooseBank == 3) {
+      print(
+          "Odenis usullari:\n1.Nagd odenish\n2.Kartla odenish\n3.Kredit vasitesile hisse-hisse odenish");
+      stdout.write("Odenish usulun nomresini daxil edin : ");
+      int? choosePayment = int.parse(stdin.readLineSync()!);
+      switch (choosePayment) {
+        case 1:
+          print(
+              "Nagd odenis etdiyiniz ucun butun kart hesabiniza ehtiyac olmadi...");
 
-    print(
-        "Odenis usullari:\n1.Nagd odenish\n2.Kartla odenish\n3.Kredit vasitesile hisse-hisse odenish");
-    stdout.write("Odenish usulun nomresini daxil edin : ");
-    int? choosePayment = int.parse(stdin.readLineSync()!);
-    switch (choosePayment) {
-      case 1:
-        print(
-            "Nagd odenis etdiyiniz ucun butun kart hesabiniza ehtiyac olmadi...");
+          break;
+        case 2:
+          print(
+              "Siz kartla odenish etdiyiniz ucun butun mebleg tam olaraq kard hesabinizdan cixilacaqdir...");
+          balance >= fullAmount
+              ? print("Kartda qalan mebleg:  ${balance - fullAmount}")
+              : print("Sizin balansinizda yeterli qeder mebleg yoxdur");
 
-        break;
-      case 2:
-        print(
-            "Siz kartla odenish etdiyiniz ucun butun mebleg tam olaraq kard hesabinizdan cixilacaqdir...");
-        balance >= fullAmount
-            ? print("Kartda qalan mebleg:  ${balance - fullAmount}")
-            : print("Sizin balansinizda yeterli qeder mebleg yoxdur");
+          break;
+        case 3:
+          print("*****************************************************");
+          print(
+              "Krediti nece odemek isteyirsiniz:\n1.3 ayliq\n2.6 ayliq\n3.12 ayliq");
+          stdout.write("Kredit usulun nomresini daxil edin : ");
+          int? chooseCardmethod = int.parse(stdin.readLineSync()!);
+          switch (chooseCardmethod) {
+            case 1:
+              print(
+                  "3 ayliq kreditle odenisde sizden hec bir komissiya tutulmayacaqdir...");
+              balance >= fullAmount
+                  ? print(
+                      "3 ayliq odenishden sonra sizin Birbank hesabinizda qalacaq mebleg: ${balance - fullAmount}")
+                  : print(
+                      "Siz odenisi bitirmek ucun kartiniza elave etmeli oldugunuz mebleg:${fullAmount - balance}");
 
-        break;
-      case 3:
-        print("*****************************************************");
-        print(
-            "Krediti nece odemek isteyirsiniz:\n1.3 ayliq\n2.6 ayliq\n3.12 ayliq");
-        stdout.write("Kredit usulun nomresini daxil edin : ");
-        int? chooseCardmethod = int.parse(stdin.readLineSync()!);
-        switch (chooseCardmethod) {
-          case 1:
-            print(
-                "3 ayliq kreditle odenisde sizden hec bir komissiya tutulmayacaqdir...");
-            balance >= fullAmount
-                ? print(
-                    "3 ayliq odenishden sonra sizin Birbank hesabinizda qalacaq mebleg: ${balance - fullAmount}")
-                : print(
-                    "Siz odenisi bitirmek ucun kartiniza elave etmeli oldugunuz mebleg:${fullAmount - balance}");
+              break;
+            case 2:
+              print(
+                  "6 ayliq kreditle odenisde sizden 10% komissiya tutulacaqdir...");
+              commission = fullAmount * 0.1;
+              print("Sizden tutulacaq komissiyanin meblegi: $commission");
+              print("Umumi odeceyiniz mebleg: ${fullAmount + commission}");
+              balance >= (fullAmount + commission)
+                  ? print(
+                      "6 ayliq odenishden sonra sizin Birbank hesabinizda qalacaq mebleg: ${balance - (fullAmount + commission)}")
+                  : print(
+                      "Siz odenisi bitirmek ucun kartiniza elave etmeli oldugunuz mebleg:${(fullAmount + commission) - balance}");
 
-            break;
-          case 2:
-            print(
-                "6 ayliq kreditle odenisde sizden 10% komissiya tutulacaqdir...");
-            commission = fullAmount * 0.1;
-            print("Sizden tutulacaq komissiyanin meblegi: $commission");
-            print("Umumi odeceyiniz mebleg: ${fullAmount + commission}");
-            balance >= (fullAmount + commission)
-                ? print(
-                    "6 ayliq odenishden sonra sizin Birbank hesabinizda qalacaq mebleg: ${balance - (fullAmount + commission)}")
-                : print(
-                    "Siz odenisi bitirmek ucun kartiniza elave etmeli oldugunuz mebleg:${(fullAmount + commission) - balance}");
+              break;
+            case 3:
+              print(
+                  "12 ayliq kreditle odenisde sizden 20% komissiya tutulacaqdir...");
+              commission = fullAmount * 0.2;
+              print("Sizden tutulacaq komissiyanin meblegi: $commission");
+              print("Umumi odeceyiniz mebleg: ${fullAmount + commission}");
+              balance >= (fullAmount + commission)
+                  ? print(
+                      "12 ayliq odenishden sonra sizin Birbank hesabinizda qalacaq mebleg: ${balance - (fullAmount + commission)}")
+                  : print(
+                      "Siz odenisi bitirmek ucun kartiniza elave etmeli oldugunuz mebleg:${(fullAmount + commission) - balance}");
 
-            break;
-          case 3:
-            print(
-                "12 ayliq kreditle odenisde sizden 20% komissiya tutulacaqdir...");
-            commission = fullAmount * 0.2;
-            print("Sizden tutulacaq komissiyanin meblegi: $commission");
-            print("Umumi odeceyiniz mebleg: ${fullAmount + commission}");
-            balance >= (fullAmount + commission)
-                ? print(
-                    "12 ayliq odenishden sonra sizin Birbank hesabinizda qalacaq mebleg: ${balance - (fullAmount + commission)}")
-                : print(
-                    "Siz odenisi bitirmek ucun kartiniza elave etmeli oldugunuz mebleg:${(fullAmount + commission) - balance}");
+              break;
+            default:
+              print("Krediti odeme usulun sehv secdiniz...");
+              break;
+          }
 
-            break;
-          default:
-            print("Krediti odeme usulun sehv secdiniz...");
-            break;
-        }
-
-        break;
-      default:
-        print("Odenish usulunu sehv secdiniz...");
-        break;
+          break;
+        default:
+          print("Odenish usulunu sehv secdiniz...");
+          break;
+      }
+      print("*****************************************************");
+      print("Bizden alish-verish etdiyiniz ucun tesekkurler...");
+    } else {
+      print("Banki yanlish daxil etdiniz...");
     }
-    print("*****************************************************");
-    print("Bizden alish-verish etdiyiniz ucun tesekkurler...");
   } else if (yourName == userName && yourPassword != userPassword) {
     print("Istifadeci Parolunuzu yanlish daxil etmisiniz...");
   } else if (yourName != userName && yourPassword == userPassword) {
