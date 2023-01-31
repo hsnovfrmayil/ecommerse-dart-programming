@@ -1,5 +1,6 @@
 ###Plan:
 #istifadeci adi ve parolu daxil edilir
+#istifadeci adi ve ya parolunundan hansi yanlisdisa bildirir
 #mehsullar: 1.Top 2.Elcek. 3.Forma
 #mehsulu ve sayin istifadeci daxil edir
 #Umumi meblegi console ye cixarir
@@ -9,3 +10,4 @@
 #3 ayliq kreditde faiz yoxdur
 #6 ayliq kreditde 10% komissiya var
 #12 ayliq kreditde 20% komissiya var
+
