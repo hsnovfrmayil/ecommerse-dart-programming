@@ -1,1 +1,11 @@
-Plan
+###Plan:
+#istifadeci adi ve parolu daxil edilir
+#mehsullar: 1.Top 2.Elcek. 3.Forma
+#mehsulu ve sayin istifadeci daxil edir
+#Umumi meblegi console ye cixarir
+#banklar 1.Kapital 2.Pasha 3.Beynelxaq
+#odenish usullari: 1.Nagd 2.Kard 3.Kredit
+#kredit: 1. 3 ayliq 2. 6 ayliq 3. 12 ayliq 
+#3 ayliq kreditde faiz yoxdur
+#6 ayliq kreditde 10% komissiya var
+#12 ayliq kreditde 20% komissiya var
